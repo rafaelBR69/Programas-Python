@@ -11,10 +11,11 @@ html {
 }
 body {
   overflow-x: hidden;
+  background-color: #F4EBDD;
 }
 /* Navbar styling */
 header {
-  background-color: #fff;
+  background-color: #F4EBDD;
   padding: 2rem 1rem;
   position: fixed;
   width: 100%;
@@ -29,14 +30,14 @@ nav {
 .logo {
   font-size: 3rem;
   font-weight: bold;
-  color: #030369d5;
+  color: #5C4033;
   margin-right: 15rem;
   margin-left: 5rem;
 }
 .burgar {
   font-size: 3rem;
   font-weight: bold;
-  color: #030369d5;
+  color: #5C4033;
   display: none;
 }
 .nav-links {
@@ -47,7 +48,7 @@ nav {
 .nav-links li {
   margin-right: 3rem;
   text-decoration: none;
-  color: #030369d5;
+  color: #5C4033;
   font-size: 1.7rem;
   font-weight: bold;
   padding: 0 10px;
@@ -67,15 +68,15 @@ nav {
   transform: scale(1.05);
 }
 .btn :first-child {
-  background-color: #030369d5;
-  color: #fff;
+  background-color: #5C4033;
+  color: #F4EBDD;
   padding: 10px 20px;
   border-radius: 20px;
   margin-right: 2rem;
 }
 .btn :last-child {
-  border: 2px solid #030369d5;
-  color: #030369d5;
+  border: 2px solid #5C4033;
+  color: #F4EBDD;
   padding: 8px 20px;
   border-radius: 20px;
   margin-right: 2rem;
@@ -85,7 +86,7 @@ nav {
 /* Hero section styling */
 .section_1 {
   position: relative;
-  background-image: url("images/elite_bg.jpeg");
+  background-image: url("images/home.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -104,8 +105,14 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(0, 0, 0, 0.7);
+  background-color: rgb(0, 0, 0, 0.2);
   z-index: 1;
+}
+.bg_text1,
+.bg_text2 {
+  color: #F4EBDD;
+  text-shadow: 2px 2px 6px #5C4033;
+
 }
 .bg_div {
   position: absolute;
@@ -114,7 +121,7 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  color: white;
+  color: #F4EBDD;
   padding-top: 240px;
 }
 .bg_div :first-child {
@@ -138,6 +145,116 @@ nav {
   }
 }
 
+.reveal {                 /* estado inicial */
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+.reveal.is-visible {      /* cuando entra en pantalla */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*───────────────────────────────────────────────
+  BLOQUE IMAGEN + TEXTO  (FULL WIDTH, ESTILO PREMIUM)
+───────────────────────────────────────────────*/
+.img-text {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  gap: var(--gap, 7rem);          /* más aire entre img y texto */
+
+  /* Dimensiones */
+  width: 100%;
+  margin-block: 4rem;             /* más respiro con secciones vecinas */
+  padding: var(--padding, 2.5rem 3rem);
+
+  /* Fondo + efecto tarjeta */
+  background: #F4EBDD;
+  border-radius: 12px;
+}
+
+/* Imagen a la derecha */
+.img-text--reverse { flex-direction: row-reverse; }
+
+/*──────── Imagen ────────*/
+.img-text__img {
+  flex: 0 0 var(--img-basis, 42%);
+  max-width: var(--img-max, 580px);
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/*──────── Contenido ────────*/
+.img-text__body {
+  flex: 1;
+  /* Interlineado y anchura máxima del texto para legibilidad */
+  line-height: var(--line, 1.9);
+  max-width: 800px;
+  text-align: var(--align, left);
+}
+
+/* Título del bloque imagen-texto */
+.img-text__title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #5C4033;
+  padding-top: 40px;
+}
+
+/* ➋  Cuando el observer agregue .is-visible */
+.img-text__title.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Subtítulo opcional */
+.img-text__subtitle {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 0 0.8rem;
+  color: #5C4033;
+}
+
+/* ▸ LISTA SIN VIÑETA NATIVA + ESPACIADO PERSONALIZADO */
+.img-text__list {
+  list-style: none;       /* ⬅️   elimina los puntos negros */
+  padding: 0;             /* reiniciamos sangría del <ul>   */
+  margin: 0 0 1.5rem;
+  font-weight: 500;
+  color: #5C4033;
+}
+
+.img-text__list li {
+  position: relative;
+  padding-left: 1.8rem;   /* ⬅️  distancia texto-icono (ajusta aquí) */
+  margin-bottom: 0.45rem;
+  color: #5C4033;
+  font-size: 2.0rem;        /* escala real; subiste antes a 1.95 rem   */
+}
+
+/* viñeta “▹” personalizada */
+.img-text__list li::before {
+  content: "▹";
+  color: #c08f5c;
+  font-weight: 700;
+  position: absolute;
+  left: 0;                /* arranca en el borde del li      */
+  top: 0.05em;            /* corrige alineación vertical opc. */
+  font-size: 1.8rem;      /* tamaño del icono (ajusta libre) */
+}
+
+/* Párrafos finales */
+.img-text__paragraph {
+  margin-block: 1rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #5C4033;
+}
+
 /* Hero section stop */
 
 .section_3 {
@@ -147,18 +264,22 @@ nav {
   align-items: center;
   height: auto;
   width: 100%;
-  padding-bottom: 3rem;
+  background-color: #F4EBDD;
 }
 .service-header {
   text-align: center;
-  width: 40%;
+  width: 80%;
   line-height: 1.6;
+  max-width: none;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .service-header h1 {
-  font-size: 3rem;
-  color: #0e0ecad5;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #5C4033;
   padding-top: 40px;
-  font-weight: 900;
 }
 .service-header h2 {
   font-size: 1.7rem;
@@ -179,7 +300,7 @@ nav {
   align-items: center;
 }
 .section3_div1 {
-  background-color: white;
+  background-color: #F4EBDD;
   height: auto;
   width: 200px;
   padding-bottom: 2.5rem;
@@ -197,7 +318,7 @@ nav {
 .buy {
   font-size: 2rem;
   padding: 0 1rem;
-  color: #040457d5;
+  color: #5C4033;
 }
 .expert {
   font-size: 1.5rem;
@@ -210,6 +331,7 @@ nav {
   font-size: 1.5rem;
   padding: 2rem 1rem;
   font-weight: bold;
+  color: #5C4033;
 }
 /* service section end */
 
@@ -222,7 +344,7 @@ nav {
   height: auto;
   width: 100%;
   padding-bottom: 10rem;
-  background-color: white;
+  background-color: #F4EBDD;
 }
 .blog-header {
   text-align: center;
@@ -231,14 +353,18 @@ nav {
 .blog-header h1 {
   padding-top: 8rem;
   font-size: 3rem;
-  color: #0e0ecad5;
+  color: #5C4033;
   line-height: 1.6;
   font-weight: 900;
 }
 .blog-header p {
-  font-size: 1.7rem;
-  color: #666;
-  line-height: 1.6;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #5C4033;
+  line-height: 2;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 .blog-gallary {
   display: grid;
@@ -248,7 +374,7 @@ nav {
   column-gap: 26px;
 }
 .section2_div1 {
-  background-color: #fff;
+  background-color: #F4EBDD;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
   height: auto;
   padding-bottom: 2rem;
@@ -266,7 +392,7 @@ nav {
   line-height: 1.6;
 }
 .div_details h2 {
-  color: #0e0ecad5;
+  color: #5C4033;
   font-size: 2rem;
 }
 .div_details p {
@@ -276,11 +402,11 @@ nav {
 .div_details button {
   margin-top: 3rem;
   padding: 1rem 2rem;
-  color: #040457d5;
+  color: #5C4033;
   font-weight: bold;
   border-radius: 20px;
-  background-color: #fff;
-  border: 2px solid #0e0ecad5;
+  background-color: #F4EBDD;
+  border: 2px solid #5C4033;
 }
 /* Blog styling stop */
 
@@ -292,7 +418,7 @@ footer {
   justify-content: center;
   height: 50vh;
   padding-bottom: 3rem;
-  background-color: #040457d5;
+  background-color: #2F4F4F;
   color: #ddd;
 }
 footer :nth-child(1) {
@@ -311,4 +437,83 @@ footer :nth-child(2) {
   font-size: 1.8rem;
   line-height: 1.5;
   font-weight: bold;
+}
+
+/* ---------- Modal base ---------- */
+.modal {
+  position: fixed;
+  inset: 0;                      /* top, right, bottom, left = 0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;            /* oculto por defecto */
+  opacity: 0;
+  transition: opacity .4s ease;
+  z-index: 9999;
+}
+
+/* ---------- Overlay semitransparente ---------- */
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+}
+
+/* ---------- Caja central ---------- */
+.modal__box {
+  position: relative;
+  background: #F4EBDD;
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 12px 28px rgba(0,0,0,.25);
+  z-index: 1;
+  text-align: center;
+}
+
+.modal__title  { font-size: 2.2rem; color:#5C4033; margin-bottom:2rem; }
+.modal__form   { display:flex; flex-direction:column; gap:1.2rem; }
+.modal__form label  { font-size:1.4rem; color:#5C4033; display:flex; flex-direction:column; gap:.4rem; }
+.modal__form input,
+.modal__form textarea {
+  padding:.8rem 1rem;
+  border:2px solid #5C4033;
+  border-radius:8px;
+  font-size:1.4rem;
+  background:#fff;
+}
+.modal__send {
+  background:#5C4033;
+  color:#F4EBDD;
+  padding:1rem 2rem;
+  border:none;
+  border-radius:20px;
+  font-size:1.6rem;
+  cursor:pointer;
+  transition: transform .15s ease;
+}
+.modal__close {
+  position:absolute;
+  top:.6rem; right:.6rem;
+  background:none; border:none;
+  font-size:2.4rem; color:#5C4033;
+  cursor:pointer;
+  transition: transform .15s ease;
+}
+
+.modal__send:active,
+.modal__close:active {
+  transform: scale(.92);     /* se encoge un poco al hacer clic */
+}
+
+/* ---------- Estado visible ---------- */
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__paragraph {
+  font-size: 1.7rem;   /* antes 1.4 rem */
+  line-height: 1.6;    /* un poco más de aire */
 }

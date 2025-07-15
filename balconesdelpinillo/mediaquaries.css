@@ -82,7 +82,25 @@
     width: 45%;
     line-height: 1.6;
   }
-  .service-header h2 {
+  @media (max-width: 600px) {
+    .service-header h1 {
+      font-size: 1.8rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .img-text,
+    .img-text--reverse {
+      flex-direction: column;
+      text-align: center;
+    }
+    .img-text__img {
+      /* que la imagen sea 100 % en móvil, pero sin max-width */
+      width: 100%;
+      flex-basis: auto;
+      max-width: none;
+    }
+  }
+    .service-header h2 {
     font-size: 1.9rem;
   }
   .service-header p {
@@ -342,4 +360,27 @@
     width: 100%;
     max-width: 260px;
   }
+  @media (max-width: 768px) {
+    .modal__box {
+      max-width: 90%;           /* un poco más de ancho relativo */
+      padding: 2rem 1.5rem;     /* menos padding */
+    }
+    .modal__title   { font-size: 1.9rem; }
+    .modal__form label,
+    .modal__form input,
+    .modal__form textarea,
+    .modal__send    { font-size: 1.3rem; }
+  }
+
+  /*──────── MÓVIL  ≤ 480 px ────────*/
+  @media (max-width: 480px) {
+    .modal__box {
+      max-width: 95%;
+      padding: 1.5rem 1rem;
+    }
+    .modal__title   { font-size: 1.7rem; }
+    .modal__close   { font-size: 2rem; }
+    .modal__send    { font-size: 1.4rem; }
+  }
+
 }
