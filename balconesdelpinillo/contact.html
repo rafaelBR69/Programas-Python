@@ -33,6 +33,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html"  data-i18n="nav.home"></a></li>
       <li><a href="contact.html" data-i18n="nav.contact"></a></li>
+      <li><a href="availability.html" data-i18n="nav.availability"></a></li>
     </ul>
 
     <div class="btn">
@@ -41,43 +42,29 @@
   </nav>
 </header>
 
-<!-- ███ HERO CONTACTO ███ -->
-<section class="section_1">
-  <div class="bg_div">
-    <h2 class="bg_text1" data-i18n="contact.heroTitle"></h2>
-    <h2 class="bg_text2" data-i18n="contact.heroSub"></h2>
-  </div>
+<!-- ███ HERO · FORMULARIO EN LA IMAGEN ███ -->
+<section class="section_1" id="contactForm">
+  <form id="leadForm" class="modal__form hero-form reveal">
+    <h2 class="hero-form__title" data-i18n="contact.formTitle"></h2>
+
+    <label data-i18n="popup.nameLabel"></label>
+    <input type="text" name="name" required>
+
+    <label data-i18n="popup.emailLabel"></label>
+    <input type="email" name="email" required>
+
+    <label data-i18n="popup.phoneLabel"></label>
+    <input type="tel" name="phone" required>
+
+    <label data-i18n="popup.msgLabel"></label>
+    <textarea name="message" rows="4"
+              data-i18n-placeholder="popup.msgPlaceholder"></textarea>
+
+    <button type="submit" class="modal__send"
+            data-i18n="popup.send"></button>
+  </form>
 </section>
 
-<!-- ███ BLOQUE IMAGEN + FORM ███ -->
-<section class="img-text img-text--reverse" id="contactForm">
-  <!-- Imagen ilustrativa -->
-  <img src="images/contact.webp" class="img-text__img"
-       alt="" data-i18n="contact.imgAlt">
-
-  <!-- Formulario de contacto (estilo modal reutilizado) -->
-  <div class="img-text__body">
-    <h2 class="img-text__title reveal" data-i18n="contact.formTitle"></h2>
-
-    <form class="modal__form reveal" id="pageForm">
-      <label data-i18n="popup.nameLabel"></label>
-      <input type="text" name="name" required>
-
-      <label data-i18n="popup.emailLabel"></label>
-      <input type="email" name="email" required>
-
-      <label data-i18n="popup.phoneLabel"></label>
-      <input type="tel" name="phone" required>
-
-      <label data-i18n="popup.msgLabel"></label>
-      <textarea name="message" rows="4"
-                data-i18n-placeholder="popup.msgPlaceholder"></textarea>
-
-      <button type="submit" class="modal__send"
-              data-i18n="popup.send"></button>
-    </form>
-  </div>
-</section>
 
 <!-- ███ INFORMACIÓN DE CONTACTO (opcional) ███ -->
 <section class="section_3">

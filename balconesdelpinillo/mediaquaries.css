@@ -382,5 +382,14 @@
     .modal__close   { font-size: 2rem; }
     .modal__send    { font-size: 1.4rem; }
   }
-
+  /*────────────────  RESPONSIVE ───────────────*/
+  @media (max-width: 768px) {
+    .contact-form { width: 95%; padding: 2rem 1.5rem; }
+    .contact-form__title { font-size: 1.9rem; }
+  }
+  @media(max-width:768px){
+    .section_1--availability{flex-direction:column;}
+    .unit-info{width:100%;order:2;}
+    #blockA-img{order:1;}
+  }
 }

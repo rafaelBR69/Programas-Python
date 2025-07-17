@@ -6,7 +6,8 @@
   },
   "nav": {
     "home": "Inicio",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "availability": "Disponibilidad"
   },
   "btn": {
     "contact": "Contactar"
@@ -72,8 +73,29 @@
     "heroTitle": "Ponte en contacto con nosotros",
     "heroSub": "Estamos a un mensaje de distancia",
     "imgAlt": "Persona rellenando un formulario",
-    "formTitle": "Déjanos tus datos",
+    "formTitle": "Rellene sus datos",
     "infoTitle": "También puedes llamarnos",
     "infoText": "Teléfono: +34 900 123 456 · Email: info@balconesdelpinillo.com"
+  },
+  "availability": {
+    "title": "Disponibilidad | Balcones del Pinillo",
+    "heroTitle": "Consulta la disponibilidad",
+    "heroSub": "Actualizamos la información en tiempo real",
+    "comingSoon": "Sección en construcción",
+    "comingSoonText": "Muy pronto podrás ver aquí los planos y precios actualizados."
+  },
+  "blockA": {
+    "title"     : "Bloque A · Planos",
+    "heroTitle" : "Bloque A",
+    "heroSub"   : "Selecciona una vivienda",
+    "infoTitle" : "Elige planta y tipología",
+    "infoText"  : "Próximamente más detalles y fichas descargables."
+  },
+  "blockB": {
+    "title"     : "Bloque B · Planos",
+    "heroTitle" : "Bloque B",
+    "heroSub"   : "Selecciona una vivienda",
+    "infoTitle" : "Elige planta y tipología",
+    "infoText"  : "Próximamente más detalles y fichas descargables."
   }
 }

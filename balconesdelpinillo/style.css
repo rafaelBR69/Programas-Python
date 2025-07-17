@@ -19,7 +19,7 @@ header {
   padding: 2rem 1rem;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 nav {
@@ -53,6 +53,28 @@ nav {
   font-weight: bold;
   padding: 0 10px;
   cursor: pointer;
+}
+
+/* estado normal y visitado */
+.nav-links a,
+.nav-links a:visited,
+.btn .sign_up,
+.btn .sign_up:visited {
+  color: #5C4033;       /* tu marrón original */
+  text-decoration: none;/* sin subrayado       */
+}
+
+/* al pasar el ratón: ligero “fade” opcional */
+.nav-links a:hover,
+.btn .sign_up:hover {
+  opacity: .8;          /* o cambia color si lo prefieres */
+}
+
+/* al pulsar: sin cambios de fondo/outline azul */
+.nav-links a:active,
+.btn .sign_up:active {
+  color: #5C4033;
+  outline: none;
 }
 .btn {
   margin-left: 8rem;
@@ -93,7 +115,7 @@ nav {
   height: 120vh;
   width: 100%;
   max-width: 100%;
-  z-index: -1;
+  z-index: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,6 +129,7 @@ nav {
   height: 100%;
   background-color: rgb(0, 0, 0, 0.2);
   z-index: 1;
+  pointer-events: none;
 }
 .bg_text1,
 .bg_text2 {
@@ -516,4 +539,188 @@ footer :nth-child(2) {
 .modal__paragraph {
   font-size: 1.7rem;   /* antes 1.4 rem */
   line-height: 1.6;    /* un poco más de aire */
+}
+
+/*────────────────────────────────────────────
+  FORMULARIO EN HERO (sin tarjeta)
+  ─ Pon tu estilo tocando las variables
+────────────────────────────────────────────*/
+.hero-form {
+  z-index: 2;                    /* ahora sí está por encima */
+  width: min(92%, 480px);
+  max-width: 420px;              /* ❸ margen fijo, más fácil de centrar */
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: left;
+}
+
+/*──────── Título ────────*/
+.hero-form__title {
+  font-size: 2.9rem;        /* ← TAMAÑO de fuente del título   */
+  font-weight: 700;
+  color: #F4EBDD;           /* ← COLOR del título              */
+  text-shadow: 2px 2px 6px #5C4033;
+  margin: 0 0 1.2rem;
+  text-align: center;
+}
+
+/*──────── Campos ────────*/
+:root {
+  /* Colores y tamaños que puedes cambiar cómodamente */
+  --field-bg : rgba(255, 255, 255, 0.85);  /* fondo de los campos            */
+  --field-text : #4c362a;  /* color del texto del usuario    */
+  --field-bord : #c08f5c;  /* color del borde                */
+  --field-size : 1.55rem;  /* tamaño de fuente en los campos */
+}
+
+.hero-form input,
+.hero-form textarea {
+  background   : var(--field-bg);
+  color        : var(--field-text);
+  border       : 2px solid var(--field-bord);
+  border-radius: 8px;
+  padding      : 1rem 1.2rem;
+  font-size    : var(--field-size);
+  width        : 100%;
+}
+
+/*──────── Botón (ya hereda .modal__send) ────────*/
+.hero-form .modal__send {
+  background: #5C4033;      /* cambia aquí si quieres otro color */
+}
+
+.hero-form label {
+  font-size: 1.8rem;      /* ← TAMAÑO de letra  (ajústalo)  */
+  color: #F4EBDD;         /* ← COLOR del texto (cámbialo)   */
+  font-weight: 600;       /* opcional: negrita              */
+  text-shadow: 1px 1px 3px #5C4033; /* opcional: sombra sutil */
+}
+
+
+#avail-img{ 
+  max-width:100%;
+   height:auto;
+    display:block;
+}
+
+.section_1--availability{
+  background-image: none;
+  background-color: #F4EBDD;
+}
+
+.section_1--availability::before{
+  background: none;                /* quita la sombra */
+}
+/*──────────────────────────────────────────
+  Cabecera de los planos (Bloque A, B, …)
+  — Sin tocar la animación existente —
+──────────────────────────────────────────*/
+.section_1--availability .bg_div{
+  /* misma mecánica ⤵  (centro X -50 / -50)  */
+  top: 12%;                     /* súbelo; prueba 8-15 % a tu gusto   */
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding-top: 0;               /* quita el “relleno” de 240 px       */
+
+}
+
+/* solo cambia el color del texto */
+.section_1--availability .bg_text1,
+.section_1--availability .bg_text2{
+  color: #5C4033;
+}
+
+area:focus{
+  outline:2px solid #2F4F4F;   /* mismo tono que el trazo Mapster */
+  outline-offset:-2px;         /* que se funda con el stroke del plugin */
+}
+
+/*──────────────────────────────────────────────
+  CONTENEDOR PRINCIPAL
+──────────────────────────────────────────────*/
+.plan-container{
+  display:flex;                 /* por si añades algo a la derecha */
+  justify-content:center;       /* centra la caja del plano        */
+}
+
+/*──────────────────────────────────────────────
+  ① Caja del plano y títulos
+──────────────────────────────────────────────*/
+.plan-box{
+  position:relative;            /* referencia para elementos absolutos */
+  display:inline-block;         /* se adapta al tamaño del plano       */
+}
+.plan-box img{ width:100%; height:auto; }
+
+/* Títulos (ya los tenías) */
+.plan-box .bg_div{
+  position:absolute;
+  left:50%; top:12%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+}
+.bg_text1, .bg_text2{ color:#5C4033; }
+
+/*──────────────────────────────────────────────
+  ② Bloque de texto plano (no empuja a nadie)
+──────────────────────────────────────────────*/
+/* ─────────  Bloque de datos más grande  ───────── */
+.info-text{
+  position:absolute;
+  left:-380px;            /* ancho y desplazamiento algo mayores          */
+  top:12%;
+  width:360px;           /* +40 px sobre el original                      */
+  font-size:2rem;    /* antes era implícitamente 1rem → +12,5 %       */
+  line-height:1.85;      /* separa un poco más las líneas                 */
+  color:#4c362a;
+}
+
+.info-text h3{
+  margin:.2rem 0 .7rem;
+  font-size:2rem;       /* antes heredaba ≈1.6 rem */
+  color:#5C4033;
+}
+
+.info-text li{
+  font-size:2rem;    /* sube cada línea un 10-15 % */
+  line-height:1.55;     /* mantiene la separación */
+}
+
+/* lista */
+.info-text ul{
+  margin:.5rem 0 1.1rem;
+  padding-left:1.4rem;   /* un pelín más de sangría                        */
+  font-size:2rem;     /* antes heredaba ≈1.125 → apenas +2 px visuales */
+}
+
+.info-text .estado-disponible{color:#4B9B4B;font-weight:700}
+.info-text .estado-reservado {color:#C08F5C;font-weight:700}
+.info-text .estado-vendido   {color:#B63E3E;font-weight:700;text-decoration:line-through}
+
+
+/*──────────────────────────────────────────────
+  ③ Adaptación móvil: texto debajo del plano
+──────────────────────────────────────────────*/
+@media (max-width: 900px){
+  /* ① la caja lateral desaparece y todo vuelve al flujo */
+  .info-text{
+    position:static;       /* sale del absoluto */
+    width:auto;
+    margin:1.5rem 0 0;     /* separación inferior del plano */
+    left:auto; top:auto;   /* por si el navegador conserva valores */
+  }
+
+  /* ② centramos el bloque completo para que no quede pegado a los bordes */
+  .plan-container{
+    justify-content:center;
+    padding:0 1rem;        /* respiración lateral */
+  }
+
+  /* ③ los títulos sobre el plano bajan un poco para no tapar la parte alta */
+  .plan-box .bg_div{
+    top:16%;
+  }
 }
