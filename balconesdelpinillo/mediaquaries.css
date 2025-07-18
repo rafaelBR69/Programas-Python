@@ -393,3 +393,68 @@
     #blockA-img{order:1;}
   }
 }
+
+/*────────────────────────────────────────
+  MÓVIL  ≤ 600 px  ▸  títulos encima de la foto
+────────────────────────────────────────*/
+@media (max-width: 600px){
+
+  /* Sección en columna: primero títulos, luego imagen */
+  .section_1--availability{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 0;        /* sin franja crema */
+    gap: 0;
+  }
+
+  /* Títulos (bg_div) reincorporados al flujo normal */
+  .section_1--availability .bg_div{
+    position: static !important;
+    transform: none !important;
+    order: 0;                /* aparece antes que la imagen */
+    width: 100%;
+    padding: 0 1rem 0.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  /* Imagen después de los títulos */
+  #avail-img{ order: 1; width:100%; height:auto; display:block; }
+
+  /* Tipografía y COLOR en móvil */
+  .section_1--availability .bg_text1{
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    color: #2F4F4F;          /* ← aquí tu color principal */
+    margin-bottom: .4rem;
+  }
+  .section_1--availability .bg_text2{
+    font-size: clamp(1.4rem, 3.8vw, 2rem);
+    color: #2F4F4F;          /* ← aquí tu color secundario (si es diferente) */
+    margin-top: .6rem;       /* separación entre líneas */
+  }
+   /* garantizamos flex‑column solo para el plan-box */
+  .section_1--availability .plan-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  /* 1 ▸ títulos primero */
+  .section_1--availability .bg_div  { order: 0; }
+
+  /* 2 ▸ imagen en segundo lugar */
+  #blockB-img                        { order: 1; }
+
+  /* 3 ▸ ficha de la vivienda al final */
+  #info-text { 
+    order: 2;
+  }
+
+  /* opcional: un poco de separación entre bloques */
+  .section_1--availability .bg_div  { margin-bottom: .8rem; }
+  #info-text { 
+    margin-top: .8rem;
+  }
+}
+

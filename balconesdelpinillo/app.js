@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
 ──────────────────────────────── */
 
 /* Configuración */
-const TIME_DELAY   = 12000; // 12 s
-const SCROLL_RATIO = 0.55;  // 55 % de scroll
+const TIME_DELAY   = 19000; // 12 s
+const SCROLL_RATIO = 0.80;  // 55 % de scroll
 
 /* Referencias DOM (pueden NO existir en algunas páginas) */
 const modal        = document.getElementById('infoModal');
