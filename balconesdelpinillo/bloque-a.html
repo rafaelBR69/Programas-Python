@@ -134,6 +134,12 @@
 <!-- LIBRERÍAS Y TU JS (mismo orden que en availability) -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/imagemapster/1.5.4/jquery.imagemapster.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.js"></script>
+<script>
+  // ruta al worker (obligatorio desde v3)
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.worker.min.js";
+</script>
 <script src="./app.js"></script>
 
 <!-- i18next init (idéntico a las otras páginas) -->
